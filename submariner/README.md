@@ -49,10 +49,10 @@ On Cluster 2:
 
 That's it. If you now try to read the data from the database in the UI, you will get an empty list and see errors in the log.
 <p align="center">
-  <img src="../diagrams/SCCstore-1.jpg">
+  <img src="../diagrams/SCCstore-1.jpg" width="600" border="1">
 </p>
 <p align="center">
-  <img src="../diagrams/SCCstore-2.jpg">
+  <img src="../diagrams/SCCstore-2.jpg" width="600" border="1">
 </p>
 
 There is no connectivity yet configured from the qcomplaints component in Cluster 1 to the database in Cluster 2.
@@ -80,5 +80,5 @@ Run the application again and... tataaa!... the database now is reachable.
 
 
 <p align="center">
-  <img src="../diagrams/SCCstore-3.jpg">
+  <img src="../diagrams/SCCstore-3.jpg" width="600" border="1">
 </p>
