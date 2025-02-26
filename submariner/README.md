@@ -1,11 +1,15 @@
 # Cross-Cluster networking Demo with Submariner
-As mentioned before, the base environment we use from the RH demo lab, has already Submariner installed and configured. Little we need to do here.
-However, for clarity's sake, let me shortly describe how Submariner works.
+As mentioned before, the used lab environment already includes an ACM hub-cluster and 2 workload-clusters. Submariner is already installed and configured.
+
+To create the environment, use this template: 
+https://catalog.demo.redhat.com/catalog?search=submariner&item=babylon-catalog-prod%2Fsandboxes-gpte.dr-cloud-cluster-binder.prod
+
+Little we need to do here, however, for clarity's sake, let me shortly describe how Submariner works.
 
 ## Submariner - a primer
 Submariner provides cross-cluster network infrastructure for OpenShift. It is integrated with and supported as part of Red Hat Advanced Cluster Management for Kubernetes. However, you do not necessarily need RH ACM, but it's much easier.
 
-Submariner connects multiple Kubernetes clusters in a way that flattens the networks between the connected clusters (L3 connectivity), and enables IP reachability between Pods and Services. Submariner also provides service discovery capabilities (services need to be 'exported').
+Submariner connects multiple Kubernetes clusters in a way that flattens the networks between the connected clusters (Layer 3 connectivity), and enables IP reachability between Pods and Services. Submariner also provides service discovery capabilities (services need to be 'exported').
 
 This said, the most important components of Submariner are:
 - The gateway - typically running on the hub-cluster

@@ -1,10 +1,6 @@
 # Cross-Cluster networking Demo with OpenShift
-The base for all following demos is a multi-cluster setup (incl. ACM) in our lab environment.
-The used lab environment already includes an ACM hub-cluster and 2 workload-clusters. Submariner is already installed and configured.
-
-To create the environment, use this template: 
-
-https://catalog.demo.redhat.com/catalog?search=submariner&item=babylon-catalog-prod%2Fsandboxes-gpte.dr-cloud-cluster-binder.prod
+The base for all following demos will be some multi-cluster setups in Red Hat's lab environment.
+Check the respective section for details.
 
 Also, you need an appropriate application. I use my own demo-application SCCStore, which is available here:
 
@@ -47,9 +43,10 @@ See Instructions for the demo [here](submariner/README.md)
 ## Red Hat Service Interconnect (Skupper)
 Red Hat Service Interconnect - or Skupper - solves the problem of enabling communication (on Layer 7) and service discovery between different types of application environments. Between Kubernetes clusters and/or other types of application environments, such as virtual machines and bare-metal servers.
 
-Other than e.g. Submariner, Skupper is a high-performance lightweight AMQP message router. So it uses a messaging system instead of VPN tunneling.
+Other than e.g. Submariner, Skupper is a high-performance lightweight AMQP (Advanced Message Queuing Protocol) message router. So it uses a messaging system instead of VPN tunneling. 
+Hmmm... you remember the declared obsolete ESB (Enterprise Service Bus)?
 
 See Instructions for the demo [here](skupper/README.md)
 
-## Federated Istio
+## Red Hat Federated Service Mesh (Istio)
 See Instructions for the demo [here](istio/README.md)
