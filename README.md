@@ -30,11 +30,26 @@ The application can now be deployed to ech of the namespaces in both clusters. W
 
 For simplicity's sake, we will not modify the existing SCCStore application. The required modifications will be described in the respective sections.
 
-## Submariner Demo
-See Instructions [here](submariner/README.md)
+## Submariner
+Submariner interconnects Kubernetes clusters through a single, unified network (Layer 3). 
+Combined with service-discovery, this enables correct routing to the application’s service implementation no matter which cluster it resides in. 
 
-## Red Hat Service Interconnect (Skupper) Demo
-See Instructions [here](skupper/README.md)
+Submariner has - in principle - no knowledge about the application. I creates a VPN-tunnel between the clusters.
+Automatic service discovery is available, but one can restrict what can be consumed from other clusters - or more precisely, you must publish the available services.
 
-## Federated Istio Demo
-See Instructions [here](istio/README.md)
+It's simple, coarse-grained cluster to cluster communication. Beside exporting services, applications have very little additional effort.
+
+> :warning: **Note**
+> And this is one of the limitations... Submariner supports only k8s-to-k8s cluster communication! 
+
+See Instructions for the demo [here](submariner/README.md)
+
+## Red Hat Service Interconnect (Skupper)
+Red Hat Service Interconnect - or Skupper - solves the problem of enabling communication (on Layer 7) and service discovery between different types of application environments. Between Kubernetes clusters and/or other types of application environments, such as virtual machines and bare-metal servers.
+
+Other than e.g. Submariner, Skupper is a high-performance lightweight AMQP message router. So it uses a messaging system instead of VPN tunneling.
+
+See Instructions for the demo [here](skupper/README.md)
+
+## Federated Istio
+See Instructions for the demo [here](istio/README.md)
