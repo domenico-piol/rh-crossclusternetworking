@@ -29,7 +29,7 @@ However, as said before, our demo environment already contains a properly setup 
   <img src="../diagrams/architecture-submariner-highlevel.drawio.svg">
 </p>
 
-## Adapt the existing application deployments
+## Dual-Cluster Scenario - adapt the existing application deployments
 Now, let's change the existing application deployments (full deployments on both clusters) since we need only part of application on each cluster and will then wire the frontend to the backend via Submariner.
 
 What we need is the following architecture:
@@ -38,7 +38,7 @@ What we need is the following architecture:
   <img src="../diagrams/architecture-submariner.drawio.svg">
 </p>
 
-So we are going to delete the PostreSQL database from Cluster 1 and the UI and Quarkus serverless component from Cluster 2.
+So we are going to delete the PostreSQL database from Cluster 1 and the UI and Quarkus serverless middle-tier component from Cluster 2.
 
 This can be easily done... From the SCCstore folder do:
 
@@ -51,6 +51,7 @@ On Cluster 2:
     oc delete -f kustomize/base/ui.yaml
     oc delete -f kustomize/base/qcomplaints.yaml
 
+## Run the Demo
 That's it. If you now try to read the data from the database in the UI, you will get an empty list and see errors in the log.
 <p align="center">
   <img src="../diagrams/SCCstore-1.jpg" width="600" border="1">

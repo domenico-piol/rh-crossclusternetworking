@@ -19,3 +19,14 @@ Red Hat Service Interconnect (Skupper) allows legacy or “never-migrate applica
 
 There is a good article on how to connect a frontend on OpenShift with a legacy backend here:
 https://developers.redhat.com/learn/connect-your-services-across-different-environments-using-red-hat-service-interconnect
+
+## Hybrid scenario(s) - adapt the existing application deployments
+Again, let's change the existing application deployments (full deployments) to match our needs.
+
+Our scenario will have the following architecture:
+
+<p align="center">
+  <img src="../diagrams/architecture-skupper.drawio.svg">
+</p>
+
+As you can see, the primary database will reside in a legacy VM (STEP 1), the secondary database as a fallback as a containerized database in a second OpenShift cluster (STEP 2).
