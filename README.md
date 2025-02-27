@@ -20,6 +20,8 @@ This said, create a namespace **in each of the workload-clusters**:
 
     oc new-project sccstore-dev
 
+:warning: Also, the demo-application requires **Red Hat OpenShift Serverless** to be installed! Don't forget that.
+
 The application can now be deployed to ech of the namespaces in both clusters. We use kustomize for this, so in the SCCstore folder, run:
 
     oc apply -k kustomize/overlays/dev
@@ -35,10 +37,23 @@ Automatic service discovery is available, but one can restrict what can be consu
 
 It's simple, coarse-grained cluster to cluster communication. Beside exporting services, applications have very little additional effort.
 
-> :warning: **Note**
+> :memo: **Note**
 > And this is one of the limitations... Submariner supports only k8s-to-k8s cluster communication! 
 
-See Instructions for the demo [here](submariner/README.md)
+==&rarr; See Instructions for the demo [here](submariner/README.md)==
+
+### Pros and Cons
+:thumbsup: Simple to use for applications, once centrally setup
+:thumbsup: Centrally managed connectivity between clusters
+:thumbsup: Native performance (no protocol translation)
+:thumbsup: Secure, traffic between member clusters is encrypted via IPsec tunnel
+:thumbsup: Dataplane Transparency - making the cross cluster communication act as if it where on a single flat network
+
+:thumbsdown: Connectivity must first be enabled by cluster admin (a pro at the same time!)
+:thumbsdown: Complex initial setup
+:thumbsdown: Additional operational overhead for platform team
+:thumbsdown: K8s only solution
+
 
 ## Red Hat Service Interconnect (Skupper)
 Red Hat Service Interconnect - or Skupper - solves the problem of enabling communication (on Layer 7) and service discovery between different types of application environments. Between Kubernetes clusters and/or other types of application environments, such as virtual machines and bare-metal servers.
@@ -46,7 +61,21 @@ Red Hat Service Interconnect - or Skupper - solves the problem of enabling commu
 Other than e.g. Submariner, Skupper is a high-performance lightweight AMQP (Advanced Message Queuing Protocol) message router. So it uses a messaging system instead of VPN tunneling. 
 Hmmm... you remember the declared obsolete ESB (Enterprise Service Bus)?
 
-See Instructions for the demo [here](skupper/README.md)
+==&rarr; See Instructions for the demo [here](skupper/README.md)==
+
+### Pros and Cons
+:thumbsup: Simple setup and usage for applications, without the need for administrative privileges (application layer security)
+:thumbsup: Kubernetes native solution
+:thumbsup: Environment agnostic: k8s, VM, BareMetal
+:thumbsup: Load balancing, failover (route) and scalability features ensuring robust and high available solutions
+:thumbsup: Secure, mTLS for every single connection
+
+:thumbsdown: Virtual Application Network must be managed by the applications
+:thumbsdown: Can introduce some performance overhead compared to Layer 3 solutions
+:thumbsdown: Service Discovery limited to own managed application
+:thumbsdown: The Layer 7 approach can make network-level troubleshooting more complex
+
+
 
 ## Red Hat Federated Service Mesh (Istio)
-See Instructions for the demo [here](istio/README.md)
+==&rarr; See Instructions for the demo [here](istio/README.md)==
