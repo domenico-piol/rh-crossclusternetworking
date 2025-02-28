@@ -25,7 +25,7 @@ This said - as a first step - clone the SCCStore application repository.
 
     git clone https://github.com/domenico-piol/SCCstore.git
 
-> [!IWARNING]
+> [!WARNING]
 >Also, the demo-application requires **Red Hat OpenShift Serverless** to be installed! Don't forget that.
 
 The application can now be deployed to each of the required namespaces in all clusters - see the respective section for the details. As said, we use kustomize for this, so in the SCCstore folder, run:
