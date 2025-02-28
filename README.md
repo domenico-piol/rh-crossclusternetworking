@@ -37,7 +37,7 @@ Automatic service discovery is available, but one can restrict what can be consu
 
 It's simple, coarse-grained cluster to cluster communication. Beside exporting services, applications have very little additional effort.
 
-> :memo: **Note**
+> [!NOTE]
 > And this is one of the limitations... Submariner supports only k8s-to-k8s cluster communication! 
 
 ### Steps
