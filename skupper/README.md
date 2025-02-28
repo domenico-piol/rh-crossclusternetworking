@@ -71,7 +71,8 @@ Then add the path to the $PATH variable:
 #### Install the demo application
 We will use the aws namespace of the demo-environment. 
 
-:warning: Also, the demo-application requires **Red Hat OpenShift Serverless** to be installed! Don't forget that.
+> [!WARNING] 
+> Also, the demo-application requires **Red Hat OpenShift Serverless** to be installed! Don't forget that.
 
     oc project aws
     oc apply -k kustomize/overlays/dev

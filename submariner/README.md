@@ -64,7 +64,7 @@ That's it. If you now try to read the data from the database in the UI:
   <img src="../diagrams/SCCstore-2.jpg" width="600" border="1">
 </p>
 
-As there is no connectivity yet configured from the qcomplaints component in Cluster 1 to the database in Cluster 2, ==you will get an empty list and see errors in the log==.
+As there is no connectivity yet configured from the qcomplaints component in Cluster 1 to the database in Cluster 2, **you will get an empty list and see errors in the log**.
 
 Wiring the services across clusters is now even more simple! 
 
