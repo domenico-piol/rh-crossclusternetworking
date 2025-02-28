@@ -38,7 +38,11 @@ What we need is the following architecture:
   <img src="../diagrams/architecture-submariner.drawio.svg">
 </p>
 
-So we are going to delete the PostreSQL database from Cluster 1 and the UI and Quarkus serverless middle-tier component from Cluster 2.
+This said, create a namespace **in each of the workload-clusters**:
+
+    oc new-project sccstore-dev
+
+After this, we will delete the PostreSQL database from Cluster 1 and the UI and Quarkus serverless middle-tier component from Cluster 2.
 
 This can be easily done... From the SCCstore folder do:
 
@@ -52,7 +56,7 @@ On Cluster 2:
     oc delete -f kustomize/base/qcomplaints.yaml
 
 ## Run the Demo
-That's it. If you now try to read the data from the database in the UI, you will get an empty list and see errors in the log.
+That's it. If you now try to read the data from the database in the UI:
 <p align="center">
   <img src="../diagrams/SCCstore-1.jpg" width="600" border="1">
 </p>
@@ -60,7 +64,7 @@ That's it. If you now try to read the data from the database in the UI, you will
   <img src="../diagrams/SCCstore-2.jpg" width="600" border="1">
 </p>
 
-There is no connectivity yet configured from the qcomplaints component in Cluster 1 to the database in Cluster 2.
+As there is no connectivity yet configured from the qcomplaints component in Cluster 1 to the database in Cluster 2, ==you will get an empty list and see errors in the log==.
 
 Wiring the services across clusters is now even more simple! 
 
