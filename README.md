@@ -1,4 +1,10 @@
 # Cross-Cluster networking Demo with OpenShift
+This demo-setup will show the differences using 3 different technologies for cross-cluster communication:
+
+- Submariner
+- Red Hat Service Connect (Skupper)
+- Red Hat Service Mesh Federation (Federated Istio)
+
 The base for all following demos will be some multi-cluster setups in Red Hat's lab environment.
 Check the respective section for details as different setups will be used per technology.
 
