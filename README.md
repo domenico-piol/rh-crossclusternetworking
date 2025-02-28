@@ -47,7 +47,7 @@ Submariner is a cluster-to-cluster VPN tunnel, not a micro-segment of an applica
 3. Once Submariner is set up correctly and connectivity is enabled, the applications can expose their services (`ServiceExport`) and use them across clusters (use the appropriate service name: `*.svc.clusterset.local`).
 
 > [!IMPORTANT]
-> &rarr; See Instructions for the demo [here](submariner/README.md)
+> &rarr; See Instructions for the demo **[here](submariner/README.md)**
 
 ### Pros and Cons
 :thumbsup: Simple to use for applications, once centrally set up by cluster-admins  
@@ -78,20 +78,22 @@ Skupper is an application level construct and actually creates a micro-segment c
 5. expose the services needed on the backend
 6. create the Skupper service to the backend on the client
 
-==&rarr; See Instructions for the demo [here](skupper/README.md)==
+> [!IMPORTANT]
+>&rarr; See Instructions for the demo **[here](skupper/README.md)**
 
 ### Pros and Cons
-:thumbsup: Simple setup and usage for applications, without the need for administrative privileges (application layer security)
-:thumbsup: Kubernetes native solution
-:thumbsup: Environment agnostic: k8s, VM, BareMetal
-:thumbsup: Load balancing, failover (route) and scalability features ensuring robust and high available solutions
-:thumbsup: Secure, mTLS for every single connection
+:thumbsup: Simple setup and usage for applications, without the need for administrative privileges (application layer security)  
+:thumbsup: Kubernetes native solution  
+:thumbsup: Environment agnostic: k8s, VM, BareMetal  
+:thumbsup: Load balancing, failover (route) and scalability features ensuring robust and high available solutions  
+:thumbsup: Secure, mTLS for every single connection  
 
-:thumbsdown: Virtual Application Network must be managed by the applications
-:thumbsdown: Can introduce some performance overhead compared to Layer 3 solutions
-:thumbsdown: Service Discovery limited to own managed application
-:thumbsdown: The Layer 7 approach can make network-level troubleshooting more complex
+:thumbsdown: Virtual Application Network must be managed by the applications  
+:thumbsdown: Can introduce some performance overhead compared to Layer 3 solutions  
+:thumbsdown: Service Discovery limited to own managed application  
+:thumbsdown: The Layer 7 approach can make network-level troubleshooting more complex  
 
 
 ## Red Hat Federated Service Mesh (Istio)
-==&rarr; See Instructions for the demo [here](istio/README.md)==
+> [!IMPORTANT]
+>&rarr; See Instructions for the demo **[here](istio/README.md)**
