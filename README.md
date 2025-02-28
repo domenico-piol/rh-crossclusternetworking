@@ -46,19 +46,20 @@ Submariner is a cluster-to-cluster VPN tunnel, not a micro-segment of an applica
 2. Setup Submariner. Create a `ManagedClusterSet` containing the 2 workload clusters, create the credentials needed and then enable Submariner.
 3. Once Submariner is set up correctly and connectivity is enabled, the applications can expose their services (`ServiceExport`) and use them across clusters (use the appropriate service name: `*.svc.clusterset.local`).
 
-==&rarr; See Instructions for the demo [here](submariner/README.md)==
+> [!IMPORTANT]
+> &rarr; See Instructions for the demo [here](submariner/README.md)
 
 ### Pros and Cons
-:thumbsup: Simple to use for applications, once centrally set up by cluster-admins
-:thumbsup: Centrally managed connectivity between clusters
-:thumbsup: Native performance (no protocol translation)
-:thumbsup: Secure, traffic between member clusters is encrypted via IPsec tunnel
-:thumbsup: Dataplane Transparency - making the cross cluster communication act as if it where on a single flat network
+:thumbsup: Simple to use for applications, once centrally set up by cluster-admins  
+:thumbsup: Centrally managed connectivity between clusters  
+:thumbsup: Native performance (no protocol translation)  
+:thumbsup: Secure, traffic between member clusters is encrypted via IPsec tunnel  
+:thumbsup: Dataplane Transparency - making the cross cluster communication act as if it where on a single flat network  
 
-:thumbsdown: Connectivity must first be enabled by cluster admin (a pro at the same time!)
-:thumbsdown: Complex initial setup
-:thumbsdown: Additional operational overhead for platform team
-:thumbsdown: K8s only solution
+:thumbsdown: Connectivity must first be enabled by cluster admin (a pro at the same time!)  
+:thumbsdown: Complex initial setup  
+:thumbsdown: Additional operational overhead for platform team  
+:thumbsdown: K8s only solution  
 
 
 ## Red Hat Service Interconnect (Skupper)
