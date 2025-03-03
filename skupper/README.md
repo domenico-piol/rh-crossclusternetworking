@@ -20,15 +20,16 @@ Red Hat Service Interconnect (Skupper) allows legacy or “never-migrate applica
 There is a good article on how to connect a frontend on OpenShift with a legacy backend here:
 https://developers.redhat.com/learn/connect-your-services-across-different-environments-using-red-hat-service-interconnect
 
+## Demo application setup 
 Our scenario will have the following architecture:
 
 <p align="center">
   <img src="../diagrams/architecture-skupper.drawio.svg">
 </p>
 
-As you can see, the primary database will reside in a legacy VM (STEP 1), the secondary database as a fallback as a containerized database in a second OpenShift cluster (STEP 2).
+As you can see, the primary database will reside in a legacy VM (STEP 1, Hybrid), the secondary database as a fallback as a containerized database in a second OpenShift cluster (STEP 2, Multi-Cloud).
 
-## Hybrid scenario(s)
+## Hybrid scenario
 First, let's change the existing application deployments (full deployments) to match our needs. In this step, we ignore the Cluster 2. Let's focus on CLuster 1 and the VM containing the database.
 
 ### Create SCCstore database on the VM
@@ -138,7 +139,7 @@ Back on the local machine, create a respective service on OpenShift:
     oc project aws
     skupper service create database 5432
 
-## Run the Demo - Part I
+## Run the Demo
 When you now run the demo application, it should show the records from the remote database via Skupper!
 
 <p align="center">
