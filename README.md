@@ -59,11 +59,13 @@ Submariner is a cluster-to-cluster VPN tunnel, not a micro-segment of an applica
 ### Pros and Cons
 |Pros|Cons|
 |:---:|:---:|
-|Simple to use for applications, once centrally set up by cluster-admins|Connectivity must first be enabled by cluster admin (a pro at the same time!)|
+|Simple to use for applications, once centrally set up by cluster-admins|Connectivity must first be enabled by cluster admin|
 |Centrally managed connectivity between clusters|Complex initial setup|
 |Native performance (no protocol translation)|Additional operational overhead for platform team|
 |Secure, traffic between member clusters is encrypted via IPsec tunnel|K8s only solution|
-| Dataplane Transparency - making the cross cluster communication act as if it where on a single flat network||
+| Dataplane Transparency - making the cross cluster communication act as if it where on a single flat network|Only VPN, no service-to-service notion|
+||Some limited support with 3rd-party (e.g. Calico)|
+||Very Simple featureset (see point-to-point), Prometheus exporter exists|
 
 
 ## Red Hat Service Interconnect (Skupper)
@@ -92,7 +94,7 @@ Skupper is an application level construct and actually creates a micro-segment c
 |Kubernetes native solution|Can introduce some performance overhead compared to Layer 3 solutions|
 |Environment agnostic: k8s, VM, BareMetal|Service Discovery limited to own managed application|
 |Load balancing, failover (route) and scalability|The Layer 7 approach can make network-level troubleshooting more complex|
-|Secure, mTLS for every single connection||
+|Secure, mTLS for every single connection|Out-of-the-box, development team manages access tokens and therefore security|
 
 
 ## Red Hat Federated Service Mesh (Istio)
