@@ -86,16 +86,13 @@ Skupper is an application level construct and actually creates a micro-segment c
 >&rarr; See Instructions for the demo **[here](skupper/README.md)**
 
 ### Pros and Cons
-:thumbsup: Simple setup and usage for applications, without the need for administrative privileges (application layer security)  
-:thumbsup: Kubernetes native solution  
-:thumbsup: Environment agnostic: k8s, VM, BareMetal  
-:thumbsup: Load balancing, failover (route) and scalability features ensuring robust and high available solutions  
-:thumbsup: Secure, mTLS for every single connection  
-
-:thumbsdown: Virtual Application Network must be managed by the applications  
-:thumbsdown: Can introduce some performance overhead compared to Layer 3 solutions  
-:thumbsdown: Service Discovery limited to own managed application  
-:thumbsdown: The Layer 7 approach can make network-level troubleshooting more complex  
+|Pros|Cons|
+|:---:|:---:|
+|Simple setup and usage for applications, without the need for administrative privileges (application layer security)|Virtual Application Network must be managed by the applications|
+|Kubernetes native solution|Can introduce some performance overhead compared to Layer 3 solutions|
+|Environment agnostic: k8s, VM, BareMetal|Service Discovery limited to own managed application|
+|Load balancing, failover (route) and scalability|The Layer 7 approach can make network-level troubleshooting more complex|
+|Secure, mTLS for every single connection||
 
 
 ## Red Hat Federated Service Mesh (Istio)
