@@ -57,16 +57,13 @@ Submariner is a cluster-to-cluster VPN tunnel, not a micro-segment of an applica
 > &rarr; See Instructions for the demo **[here](submariner/README.md)**
 
 ### Pros and Cons
-:thumbsup: Simple to use for applications, once centrally set up by cluster-admins  
-:thumbsup: Centrally managed connectivity between clusters  
-:thumbsup: Native performance (no protocol translation)  
-:thumbsup: Secure, traffic between member clusters is encrypted via IPsec tunnel  
-:thumbsup: Dataplane Transparency - making the cross cluster communication act as if it where on a single flat network  
-
-:thumbsdown: Connectivity must first be enabled by cluster admin (a pro at the same time!)  
-:thumbsdown: Complex initial setup  
-:thumbsdown: Additional operational overhead for platform team  
-:thumbsdown: K8s only solution  
+|Pros|Cons|
+|:---:|:---:|
+|Simple to use for applications, once centrally set up by cluster-admins|Connectivity must first be enabled by cluster admin (a pro at the same time!)|
+|Centrally managed connectivity between clusters|Complex initial setup|
+|Native performance (no protocol translation)|Additional operational overhead for platform team|
+|Secure, traffic between member clusters is encrypted via IPsec tunnel|K8s only solution|
+| Dataplane Transparency - making the cross cluster communication act as if it where on a single flat network||
 
 
 ## Red Hat Service Interconnect (Skupper)
