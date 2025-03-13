@@ -38,11 +38,12 @@ What we need is the following architecture:
   <img src="../diagrams/architecture-submariner.drawio.svg">
 </p>
 
-This said, create a namespace **in each of the workload-clusters**:
+This said, create a namespace **in each of the workload-clusters** and deploy the application. From the SCCstore folder do:
 
     oc new-project sccstore-dev
+    oc apply -k kustomize/overlays/dev
 
-After this, we will delete the PostreSQL database from Cluster 1 and the UI and Quarkus serverless middle-tier component from Cluster 2.
+As we want to have a distributed application, we will delete the PostreSQL database from Cluster 1 and the UI and Quarkus serverless middle-tier component from Cluster 2.
 
 This can be easily done... From the SCCstore folder do:
 
