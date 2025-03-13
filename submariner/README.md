@@ -50,6 +50,7 @@ This can be easily done... From the SCCstore folder do:
 On Cluster 1:
 
     oc delete -f kustomize/overlays/dev/db.yaml
+    oc delete -f kustomize/overlays/dev/db-service.yaml
 
 On Cluster 2:
 
