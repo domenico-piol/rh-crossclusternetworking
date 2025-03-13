@@ -62,10 +62,10 @@ Submariner is a cluster-to-cluster VPN tunnel, not a micro-segment of an applica
 |Simple to use for applications, once centrally set up by cluster-admins|Connectivity must first be enabled by cluster admin|
 |Centrally managed connectivity between clusters|Complex initial setup|
 |Native performance (no protocol translation)|Additional operational overhead for platform team|
-|Secure, traffic between member clusters is encrypted via IPsec tunnel|K8s only solution|
-| Dataplane Transparency - making the cross cluster communication act as if it where on a single flat network|Only VPN, no service-to-service notion|
+|Secure, traffic between member clusters is encrypted via IPsec tunnel / Simplified firewall needs - mainly between clusters, not services|K8s only solution|
+| Dataplane Transparency - making the cross cluster communication act as if it where on a single flat network|Only VPN, cluster-to-cluster no service-to-service notion (network security)|
 ||Some limited support with 3rd-party (e.g. Calico)|
-||Very Simple featureset (see point-to-point), Prometheus exporter exists|
+||Very Simple featureset - little observability, no traffic control|
 
 
 ## Red Hat Service Interconnect (Skupper)
