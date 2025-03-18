@@ -106,7 +106,7 @@ That will be the name of the Skupper service used!
 ### Skupper setup
 Let's focus on Skupper now... follow the tutorial.
 
-On our local machine, connect to the OpenShift cluster running the SCCstore demo and initialize Skupper:
+On our local machine, connect to the OpenShift cluster running the SCCstore demo and initialize the Skupper Router in the namespace:
 
     oc project aws
     skupper init --enable-console --enable-flow-collector --console-auth unsecured
@@ -168,7 +168,7 @@ There will be an error because of the missing Serverless environment. We can hap
 
 Now only the PostgreSQL database should be running.
 
-Now initialize the Skupper environment also in this namespace:
+Now initialize the Skupper Router also in this namespace:
 
     oc project azure
     skupper init
